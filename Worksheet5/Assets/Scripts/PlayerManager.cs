@@ -8,11 +8,16 @@ public class PlayerManager : MonoBehaviourPunCallbacks
 {
   // We will instantiate the prefab using the name
   // of the prefab.
-  public string mPlayerPrefabName;
+  public string[] mPlayerPrefabName;
 
   // We keep a reference to the spawnpoints component.
   // This is required to spawn our player at runtime.
   public PlayerSpawnPoints mSpawnPoints;
+
+    //Get the number referring to the character model the player
+    //chose from the multiplayer launcher
+    //0 as your hold varibel so stuff dun break
+    public int chosenModelNumber;
 
   // This is the game object created from the prefab name.
   private GameObject mPlayerGameObject;
@@ -23,13 +28,27 @@ public class PlayerManager : MonoBehaviourPunCallbacks
 
   private void Start()
   {
-    CreatePlayer();
+        //USE THIS LATER WHEN YOU CAN PASS THE NUMBERS, IF NOT RELY ON THE RANDOMIZER
+        /*if (chosenModelNumber == null)
+        {
+            chosenModelNumber = Random.Range(0, 2);
+            Debug.Log(chosenModelNumber);
+            CreatePlayer(chosenModelNumber);
+        }
+        else
+        {
+            CreatePlayer(chosenModelNumber);
+        }*/
+
+        chosenModelNumber = Random.Range(0, 2);
+        Debug.Log(chosenModelNumber);
+        CreatePlayer(chosenModelNumber);
   }
 
 
-  public void CreatePlayer()
+  public void CreatePlayer(int playerModel)
   {
-    mPlayerGameObject = PhotonNetwork.Instantiate(mPlayerPrefabName,
+    mPlayerGameObject = PhotonNetwork.Instantiate(mPlayerPrefabName[playerModel],
         mSpawnPoints.GetSpawnPoint().position,
         mSpawnPoints.GetSpawnPoint().rotation,
         0);
