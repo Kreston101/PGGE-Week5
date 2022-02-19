@@ -1,3 +1,3 @@
-# PGGE Assignment 2 - Base Code
+# PGGE Assignment 2 - Ethan
 
-Please fork this project or download a copy of it. You can use this project as your base code for PGGE Assignment 2.
+This repository was originally copied and has been modified based on assignment specs
