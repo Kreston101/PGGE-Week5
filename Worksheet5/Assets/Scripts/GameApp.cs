@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class GameApp : Singleton<GameApp>
 {
+    public int gameAppIntToPass;
+
   private bool mPause = false;
 
   /// <summary>
@@ -61,4 +63,17 @@ public class GameApp : Singleton<GameApp>
     }
   }
 
+    //function called from CharSelector
+    //recives and stores the number of the
+    //chosen player model
+    public void passInt(int passThis)
+    {
+        gameAppIntToPass = passThis;
+    }
+    //functioned called to send the integer to
+    //the PlayerManager
+    public int sendInt()
+    {
+        return gameAppIntToPass;
+    }
 }

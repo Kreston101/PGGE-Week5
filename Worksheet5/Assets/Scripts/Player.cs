@@ -72,8 +72,8 @@ public class Player : MonoBehaviour
     if (Input.GetButton("Fire1"))
     {
       mAttackButtons[0] = true;
-      mAttackButtons[1] = false;
-      mAttackButtons[2] = false;
+      //mAttackButtons[1] = false;
+      //mAttackButtons[2] = false;
     }
     else
     {
@@ -82,9 +82,9 @@ public class Player : MonoBehaviour
 
     if (Input.GetButton("Fire2"))
     {
-      mAttackButtons[0] = false;
+      //mAttackButtons[0] = false;
       mAttackButtons[1] = true;
-      mAttackButtons[2] = false;
+      //mAttackButtons[2] = false;
     }
     else
     {
@@ -93,8 +93,8 @@ public class Player : MonoBehaviour
 
     if (Input.GetButton("Fire3"))
     {
-      mAttackButtons[0] = false;
-      mAttackButtons[1] = false;
+      //mAttackButtons[0] = false;
+      //mAttackButtons[1] = false;
       mAttackButtons[2] = true;
     }
     else

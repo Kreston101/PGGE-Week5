@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 1652204}
   - component: {fileID: 1652203}
   - component: {fileID: 1652202}
+  - component: {fileID: 1652205}
   m_Layer: 5
   m_Name: Button_MultiPlayer
   m_TagString: Untagged
@@ -244,6 +245,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1652200}
   m_CullTransparentMesh: 1
+--- !u!114 &1652205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1652200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36250f1724ec3804c8d4ce7c89718303, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 1652202}
+  sound: {fileID: 8300000, guid: 600c973b3f97e424a8bd72cf2d146a31, type: 3}
+  source: {fileID: 0}
 --- !u!1 &151890519
 GameObject:
   m_ObjectHideFlags: 0
@@ -356,6 +372,7 @@ GameObject:
   - component: {fileID: 575204402}
   - component: {fileID: 575204401}
   - component: {fileID: 575204400}
+  - component: {fileID: 575204403}
   m_Layer: 5
   m_Name: Button_SinglePlayer
   m_TagString: Untagged
@@ -465,6 +482,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 575204398}
   m_CullTransparentMesh: 1
+--- !u!114 &575204403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 575204398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36250f1724ec3804c8d4ce7c89718303, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 575204400}
+  sound: {fileID: 8300000, guid: 600c973b3f97e424a8bd72cf2d146a31, type: 3}
+  source: {fileID: 0}
 --- !u!1 &802690616
 GameObject:
   m_ObjectHideFlags: 0

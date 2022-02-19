@@ -73,7 +73,7 @@ public class PlayerMovement : MonoBehaviour
             jump = false;
         }
 
-        if (Input.GetKeyDown(KeyCode.Tab))
+        if (Input.GetKeyDown(KeyCode.X))
         {
             crouch = !crouch;
             Crouch();

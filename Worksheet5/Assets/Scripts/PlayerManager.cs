@@ -3,20 +3,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using PGGE.MultiPlayer;
 
 public class PlayerManager : MonoBehaviourPunCallbacks
 {
   // We will instantiate the prefab using the name
   // of the prefab.
+  //converted varible to an array to take in both
+  //player models
   public string[] mPlayerPrefabName;
 
   // We keep a reference to the spawnpoints component.
   // This is required to spawn our player at runtime.
   public PlayerSpawnPoints mSpawnPoints;
 
-    //Get the number referring to the character model the player
-    //chose from the multiplayer launcher
-    //0 as your hold varibel so stuff dun break
+    //int that will store the number of the selected
+    //player model from GameApp
     public int chosenModelNumber;
 
   // This is the game object created from the prefab name.
@@ -28,19 +30,10 @@ public class PlayerManager : MonoBehaviourPunCallbacks
 
   private void Start()
   {
-        //USE THIS LATER WHEN YOU CAN PASS THE NUMBERS, IF NOT RELY ON THE RANDOMIZER
-        /*if (chosenModelNumber == null)
-        {
-            chosenModelNumber = Random.Range(0, 2);
-            Debug.Log(chosenModelNumber);
-            CreatePlayer(chosenModelNumber);
-        }
-        else
-        {
-            CreatePlayer(chosenModelNumber);
-        }*/
-
-        chosenModelNumber = Random.Range(0, 2);
+        //get the number from GameApp, can be either 0 or 1
+        //slightly modified the player create function to
+        //take in a number and access the array of player models
+        chosenModelNumber = FindObjectOfType<GameApp>().sendInt();
         Debug.Log(chosenModelNumber);
         CreatePlayer(chosenModelNumber);
   }
@@ -48,6 +41,7 @@ public class PlayerManager : MonoBehaviourPunCallbacks
 
   public void CreatePlayer(int playerModel)
   {
+        //instantiates the model that the player chose
     mPlayerGameObject = PhotonNetwork.Instantiate(mPlayerPrefabName[playerModel],
         mSpawnPoints.GetSpawnPoint().position,
         mSpawnPoints.GetSpawnPoint().rotation,
