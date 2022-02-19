@@ -17,8 +17,15 @@ namespace PGGE.MultiPlayer
     Button ButtonJoinRoom;
     [SerializeField]
     Text TextConnectionStatus;
+        //other menu buttons that need to be deactivated
+        [SerializeField]
+        Button ButtonSelectChar1;
+        [SerializeField]
+        Button ButtonSelectChar2;
+        [SerializeField]
+        Button ButtonSelectRand;
 
-    [SerializeField]
+        [SerializeField]
     int version;
 
     private bool mIsConnecting = false;
@@ -37,6 +44,10 @@ namespace PGGE.MultiPlayer
         {
           OnClick_JoinButton();
         });
+            //Removed and shifted to CharSelector as part of refactoring
+            //ButtonSelectChar1.onClick.AddListener(ChooseCharOne);
+            //ButtonSelectChar2.onClick.AddListener(ChooseCharTwo);
+            //ButtonSelectRand.onClick.AddListener(ChooseRandChar);
     }
 
     public void OnClick_JoinButton()
@@ -46,6 +57,10 @@ namespace PGGE.MultiPlayer
       InputName.gameObject.SetActive(false);
       ButtonJoinRoom.gameObject.SetActive(false);
       TextConnectionStatus.gameObject.SetActive(true);
+            //buttons added below so that they are deactivated when the othe menu buttons are disabled
+            ButtonSelectChar1.gameObject.SetActive(false);
+            ButtonSelectChar2.gameObject.SetActive(false);
+            ButtonSelectRand.gameObject.SetActive(false);
 
       PhotonNetwork.GameVersion = Application.version;
 
@@ -112,7 +127,21 @@ namespace PGGE.MultiPlayer
         PhotonNetwork.LoadLevel("MultiPlayerScene1");
       }
     }
-
-
-  }
+        //Removed and shifted to CharSelector as part of refactoring
+        /*public void ChooseCharOne()
+        {
+            chosenCharNum = 0;
+            FindObjectOfType<GameApp>().passInt(chosenCharNum);
+        }
+        public void ChooseCharTwo()
+        {
+            chosenCharNum = 1;
+            FindObjectOfType<GameApp>().passInt(chosenCharNum);
+        }
+        public void ChooseRandChar()
+        {
+            chosenCharNum = Random.Range(0, 2);
+            FindObjectOfType<GameApp>().passInt(chosenCharNum);
+        }*/
+    }
 }

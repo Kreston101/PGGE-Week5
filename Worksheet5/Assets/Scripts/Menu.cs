@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+
 public class Menu : MonoBehaviour
 {
   // We are going to add the button click 
@@ -13,6 +14,8 @@ public class Menu : MonoBehaviour
   Button ButtonSinglePlayer;
   [SerializeField]
   Button ButtonMultiPlayer;
+
+    AudioSource source;
 
   private void Start()
   {
@@ -32,11 +35,11 @@ public class Menu : MonoBehaviour
   public void OnClick_SinglePlayer()
   {
     Debug.Log("Loading Single Player");
-    SceneManager.LoadScene("SinglePlayer");
+        SceneManager.LoadScene("SinglePlayer");
   }
   public void OnClick_MultiPlayer()
   {
     Debug.Log("Loading Multiplayer");
-    SceneManager.LoadScene("MultiPlayerLauncher");
+        SceneManager.LoadScene("MultiPlayerLauncher");
   }
 }
